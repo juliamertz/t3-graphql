@@ -1,0 +1,11 @@
+  type Example {
+    id: String
+  }
+
+  type Query {
+    example: [Example]
+  }
+
+  type Mutation {
+    example(id: String): String!
+  }

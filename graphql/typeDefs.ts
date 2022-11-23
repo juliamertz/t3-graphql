@@ -1,15 +1,4 @@
-import { gql } from "@apollo/client";
+import { readFileSync } from "fs";
 
-export const typeDefs = gql`
-  type Example {
-    id: String
-  }
-
-  type Query {
-    example: [Example]
-  }
-
-  type Mutation {
-    example(id: String): String!
-  }
-`;
+const schemaName = "./schema.graphql";
+export const typeDefs = readFileSync(schemaName, { encoding: "utf-8" });
